@@ -678,21 +678,267 @@
             100% { content: '.'; }
         }
 
-        @media (max-width: 480px) {
+        /* Tablet styles */
+        @media (min-width: 481px) and (max-width: 900px) {
             .container {
-                padding: 10px;
+                max-width: 90vw;
+                padding: 24px 10px;
             }
-            
-            .card {
-                padding: 20px 15px;
-            }
-            
-            .business-growth {
+            .main-title, .section-title, .whats-in-title {
                 font-size: 28px;
             }
-            
+            .card {
+                padding: 28px 12px;
+            }
+            .business-growth {
+                font-size: 32px;
+            }
             .year-2025 {
+                font-size: 48px;
+            }
+            .feature-section {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+                text-align: left;
+            }
+            .feature-icon {
+                margin: 0 0 10px 0;
+            }
+            .features-list {
+                font-size: 15px;
+            }
+            .speakers {
+                gap: 18px;
+            }
+            .coach-card {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+                text-align: left;
+            }
+            .coach-image {
+                margin: 0 0 10px 0;
+            }
+            .pricing-section {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+            }
+            .pricing-card {
+                min-width: 220px;
+                max-width: 100%;
+            }
+            .testimonials {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+            }
+            .testimonial {
+                min-width: 180px;
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 901px) and (max-width: 1200px) {
+            .container {
+                max-width: 900px;
+                padding: 40px 20px;
+            }
+        }
+
+        @media (min-width: 600px) {
+            .container {
+                max-width: 700px;
+                padding: 40px 30px;
+            }
+            .main-title, .section-title, .whats-in-title {
+                font-size: 36px;
+            }
+            .card {
+                padding: 40px 35px;
+            }
+            .business-growth {
                 font-size: 40px;
+            }
+            .year-2025 {
+                font-size: 60px;
+            }
+            .feature-section {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                text-align: left;
+            }
+            .feature-icon {
+                margin: 0;
+            }
+            .feature-title, .feature-description {
+                text-align: left;
+            }
+            .features-list {
+                font-size: 18px;
+            }
+            .speakers {
+                gap: 30px;
+            }
+            .coach-card {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                text-align: left;
+            }
+            .coach-image {
+                margin: 0;
+            }
+            .coach-name, .coach-title, .coach-description {
+                text-align: left;
+            }
+            .pricing-section {
+                display: flex;
+                gap: 30px;
+                justify-content: center;
+            }
+            .pricing-card {
+                flex: 1 1 0;
+                min-width: 300px;
+                max-width: 400px;
+            }
+            .testimonials {
+                display: flex;
+                gap: 30px;
+                justify-content: center;
+            }
+            .testimonial {
+                flex: 1 1 0;
+                min-width: 250px;
+                max-width: 350px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1100px;
+                padding: 60px 0;
+            }
+            .card {
+                padding: 50px 50px;
+            }
+            .main-title, .section-title, .whats-in-title {
+                font-size: 44px;
+            }
+            .business-growth {
+                font-size: 56px;
+            }
+            .year-2025 {
+                font-size: 80px;
+            }
+            .feature-section {
+                gap: 50px;
+            }
+            .coach-card {
+                gap: 50px;
+            }
+            .pricing-section {
+                gap: 50px;
+            }
+            .testimonials {
+                gap: 50px;
+            }
+        }
+
+        /* Improved mobile styles */
+        @media (max-width: 480px) {
+            .container {
+                padding: 6px;
+            }
+            .card {
+                padding: 14px 4px;
+                border-radius: 12px;
+            }
+            .main-title, .section-title, .whats-in-title {
+                font-size: 18px;
+                line-height: 1.2;
+            }
+            .business-growth {
+                font-size: 18px;
+            }
+            .year-2025 {
+                font-size: 22px;
+            }
+            .feature-section {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                margin-bottom: 6px;
+            }
+            .features-list {
+                font-size: 12px;
+            }
+            .speakers {
+                gap: 6px;
+            }
+            .speaker-img {
+                width: 48px;
+                height: 48px;
+            }
+            .coach-card {
+                flex-direction: column;
+                gap: 6px;
+                padding: 16px 4px;
+            }
+            .coach-image {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 6px;
+            }
+            .pricing-section {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .pricing-card {
+                padding: 16px 4px;
+                min-width: 0;
+                max-width: 100%;
+            }
+            .testimonials {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .testimonial {
+                min-width: 0;
+                max-width: 100%;
+            }
+            .testimonial-avatar {
+                width: 40px;
+                height: 40px;
+            }
+            .cta-button, .pricing-button, .community-button {
+                font-size: 15px;
+                padding: 12px 10px;
+                border-radius: 8px;
+            }
+            .form-input {
+                font-size: 14px;
+                padding: 10px 12px;
+                border-radius: 8px;
+            }
+            .checkbox-label {
+                font-size: 12px;
+            }
+            .bonus-title {
+                font-size: 16px;
+            }
+            .bonus-icon {
+                width: 28px;
+                height: 28px;
+                font-size: 14px;
             }
         }
     </style>
