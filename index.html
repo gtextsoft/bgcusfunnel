@@ -944,10 +944,54 @@
     </style>
 </head>
 <body>
+    <!-- Responsive Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="IMAGES/saflogo.png" alt="Stephen Akintayo Foundation" style="height:40px; vertical-align:middle;">
+            </div>
+            <nav class="header-nav" id="header-nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#speakers" class="nav-link">Speakers</a>
+                <a href="#tickets" class="nav-link">Tickets</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
     <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <div class="logo"><img src="IMAGES/saflogo.png" alt="Stephen Akintayo Foundation" width="100px" ></div>
+        <!-- Flyer Hero Banner -->
+        <div class="card flyer-hero" id="about" style="padding: 0; margin-bottom: 30px; position: relative; overflow: visible;">
+            <img src="IMAGES/bus.jpg" alt="Business Growth Conference Flyer" class="flyer-img" style="width: 100%; border-radius: 20px 20px 0 0; cursor: pointer; box-shadow: 0 8px 32px rgba(76,70,229,0.15); transition: transform 0.3s;" onclick="openFlyerModal()">
+            <button class="register-flyer-btn" onclick="scrollToForm()" style="position: absolute; top: 18px; right: 18px; background: #FF1744; color: #fff; border: none; border-radius: 8px; padding: 10px 18px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.08); z-index: 2; transition: background 0.2s;">Register</button>
+        </div>
+        <!-- Flyer Modal -->
+        <div id="flyer-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center;">
+            <span onclick="closeFlyerModal()" style="position:absolute; top:30px; right:40px; font-size:40px; color:#fff; cursor:pointer; z-index:2;">&times;</span>
+            <img src="IMAGES/bus.jpg" alt="Flyer Large" style="max-width:90vw; max-height:90vh; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.25);">
+        </div>
+        <!-- Event Info Section (from flyer) -->
+        <div class="card event-info-section improved-event-info">
+            <div class="event-info-accent"></div>
+            <div class="event-info-content">
+                <div class="event-info-left">
+                    <h2 class="event-info-title">Business Growth Conference 2025</h2>
+                    <div class="event-info-line"><span class="event-info-icon">📅</span> <span>23rd & 24th August 2025</span></div>
+                    <div class="event-info-line"><span class="event-info-icon">👤</span> <span>Convener: <b>Dr. Stephen Akintayo</b></span></div>
+                    <div class="event-info-line"><span class="event-info-icon">🎤</span> <span>Speaker: <b>Dr. Cosmas Maduka</b></span></div>
+                    <div class="event-info-line"><span class="event-info-icon">🌐</span> <span>Reservations: <a href="https://www.stephenakintayo.com/salesconference" target="_blank">stephenakintayo.com/salesconference</a></span></div>
+                    <div class="event-info-line"><span class="event-info-icon">✉️</span> <span>Email: <a href="mailto:products@stephenakintayo.com">products@stephenakintayo.com</a></span></div>
+                    <div class="event-info-line"><span class="event-info-icon">📞</span> <span>Inquiries: <a href="tel:+14793519012">+1 479 351 9012</a>, <a href="tel:+13468205857">+1 346 820 5857</a></span></div>
+                </div>
+                <div class="event-info-right">
+                    <div class="event-info-datebox">
+                        <div class="event-info-date-main">23rd & 24th<br>Aug 2025</div>
+                        <div class="event-info-seats">Limited Seats!</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Hero Section -->
@@ -976,22 +1020,40 @@
         <div class="card" id="main-form">
             <h1 class="main-title">Scale to 10 Figures: Business Growth Conference 2025</h1>
             
-            <form id="registration-form" class="registration-form" action="https://formspree.io/f/mzzvpbzo" method="POST">
+            <form id="registration-form" class="registration-form" action="https://app.mailingboss.com/lists/687678b97dfbd/subscribe" method="POST">
                 <div class="form-group">
                     <input type="text" class="form-input" name="name" placeholder="👤 Full name" required>
+                    <div class="error-message" style="color:#FF1744; font-size:13px; display:none;"></div>
                 </div>
-                
+                <div class="form-group" style="display: flex; gap: 8px;">
+                    <select name="phone_prefix" class="form-input" style="max-width: 110px; flex: 0 0 110px;" required>
+                        <option value="+1">🇺🇸 +1 (USA)</option>
+                        <option value="+234">🇳🇬 +234 (Nigeria)</option>
+                        <option value="+44">🇬🇧 +44 (UK)</option>
+                        <option value="+55">🇧🇷 +55 (Brazil)</option>
+                        <option value="+91">🇮🇳 +91 (India)</option>
+                        <option value="+27">🇿🇦 +27 (South Africa)</option>
+                        <option value="+233">🇬🇭 +233 (Ghana)</option>
+                        <option value="+971">🇦🇪 +971 (UAE)</option>
+                        <option value="+61">🇦🇺 +61 (Australia)</option>
+                        <option value="+49">🇩🇪 +49 (Germany)</option>
+                        <option value="+33">🇫🇷 +33 (France)</option>
+                        <option value="+234">🇳🇬 +234 (Nigeria)</option>
+                        <!-- Add more as needed -->
+                    </select>
+                    <input type="tel" class="form-input" name="phone" placeholder="📞 Phone number">
+                </div>
                 <div class="form-group">
                     <input type="email" class="form-input" name="email" placeholder="📧 Email address" required>
+                    <div class="error-message" style="color:#FF1744; font-size:13px; display:none;"></div>
                 </div>
-                
                 <div class="checkbox-group">
-                    <input type="checkbox" class="checkbox" required>
-                    <label class="checkbox-label">
+                    <input type="checkbox" class="checkbox" required id="privacy-checkbox">
+                    <label class="checkbox-label" for="privacy-checkbox">
                         I have read and accept the <a href="#" class="privacy-link">privacy policy</a>.
                     </label>
                 </div>
-                
+                <div class="checkbox-error-message" style="color:#FF1744; font-size:13px; display:none; margin-bottom:10px;"></div>
                 <button type="submit" class="cta-button">
                     Secure Your Seat
                     <div class="seats-left">20 VIP Seats left!</div>
@@ -1072,27 +1134,24 @@
         <!-- Testimonials -->
         <div class="card testimonials">
             <div class="testimonial">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face" alt="Philipp S" class="testimonial-avatar">
+                <div class="testimonial-author">Philipp</div>
                 <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <div class="testimonial-author">Philipp S, Trustpilot</div>
                 <div class="testimonial-text">
                     Attending the Business Growth Conference was a game-changer. The insights and strategies shared were invaluable.
                 </div>
             </div>
             
             <div class="testimonial">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b55151d4?w=120&h=120&fit=crop&crop=face" alt="Noemi M" class="testimonial-avatar">
+                <div class="testimonial-author">Noemi</div>
                 <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <div class="testimonial-author">Noemi M, G2</div>
                 <div class="testimonial-text">
                     Attending this event in Dallas was truly life-changing. The insights from industry leaders were invaluable, and I left with practical strategies to grow my wealth. This event is a must for anyone serious about financial freedom!
                 </div>
             </div>
             
             <div class="testimonial">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Harald F" class="testimonial-avatar">
+                <div class="testimonial-author">Harald</div>
                 <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <div class="testimonial-author">Harald F, Facebook</div>
                 <div class="testimonial-text">
                     I travelled from out of state to attend this event, and it was worth every minute. The knowledge shared was not only practical but also inspiring. The festival left me motivated and equipped to take the next step in my wealth-building journey.
                 </div>
@@ -1100,7 +1159,7 @@
         </div>
 
         <!-- Coaches Section -->
-        <div class="card coaches-section">
+        <div class="card coaches-section" id="speakers">
             <h2 class="section-title">Meet Your Visionary Coaches</h2>
             <p class="section-subtitle">
                 Discover our diverse, talented team that implements our innovative ideas with expertise and commitment.
@@ -1147,7 +1206,7 @@
         </div>
 
         <!-- Pricing Section -->
-        <div class="card pricing-section">
+        <div class="card pricing-section" id="tickets">
             <div class="pricing-card">
                 <h3 class="pricing-type">General Admission</h3>
                 <div class="pricing-amount">$199</div>
@@ -1160,7 +1219,7 @@
                     <li>Live Q&A with Select Speakers</li>
                     <li>A post-conference growth plan to keep your fire burning.</li>
                 </ul>
-                <button class="pricing-button">Regular Tickets - $199</button>
+                <button class="pricing-button" onclick="scrollToForm()">Regular Tickets - $199</button>
             </div>
             
             <div class="pricing-card">
@@ -1175,20 +1234,46 @@
                     <li>Live Q&A with Select Speakers</li>
                     <li>A post-conference growth plan to keep your fire burning.</li>
                 </ul>
-                <button class="pricing-button">VIP Tickets - $999</button>
+                <button class="pricing-button" onclick="scrollToForm()">VIP Tickets - $999</button>
             </div>
         </div>
 
         <!-- Urgent Section -->
-        <div class="card urgent-section">
+        <div class="card urgent-section" id="contact">
             <h2 class="urgent-title">Secure Your Spot Now!</h2>
             <p class="urgent-subtitle">Get expert insights and premium content - secure your spot now!</p>
             
-            <form id="urgent-form" class="registration-form" action="https://formspree.io/f/mzzvpbzo" method="POST">
-            
-                <div class="form-group">
-                <button type="submit" class="cta-button">Pay now</button>
+            <form id="urgent-form" class="registration-form" action="https://app.mailingboss.com/lists/687678b97dfbd/subscribe" method="POST">
+                <div class="form-group" style="display: flex; gap: 8px;">
+                    <select name="phone_prefix" class="form-input" style="max-width: 110px; flex: 0 0 110px;" required>
+                        <option value="+1">🇺🇸 +1 (USA)</option>
+                        <option value="+234">🇳🇬 +234 (Nigeria)</option>
+                        <option value="+44">🇬🇧 +44 (UK)</option>
+                        <option value="+55">🇧🇷 +55 (Brazil)</option>
+                        <option value="+91">🇮🇳 +91 (India)</option>
+                        <option value="+27">🇿🇦 +27 (South Africa)</option>
+                        <option value="+233">🇬🇭 +233 (Ghana)</option>
+                        <option value="+971">🇦🇪 +971 (UAE)</option>
+                        <option value="+61">🇦🇺 +61 (Australia)</option>
+                        <option value="+49">🇩🇪 +49 (Germany)</option>
+                        <option value="+33">🇫🇷 +33 (France)</option>
+                        <option value="+234">🇳🇬 +234 (Nigeria)</option>
+                        <!-- Add more as needed -->
+                    </select>
+                    <input type="tel" class="form-input" name="phone" placeholder="📞 Phone number" required pattern="[0-9]{7,15}">
                 </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" name="email" placeholder="📧 Email address" required>
+                    <div class="error-message" style="color:#FF1744; font-size:13px; display:none;"></div>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" class="checkbox" required id="privacy-checkbox-urgent">
+                    <label class="checkbox-label" for="privacy-checkbox-urgent">
+                        I have read and accept the <a href="#" class="privacy-link">privacy policy</a>.
+                    </label>
+                </div>
+                <div class="checkbox-error-message" style="color:#FF1744; font-size:13px; display:none; margin-bottom:10px;"></div>
+                <button type="submit" class="cta-button">Pay now</button>
             </form>
             
             <div class="footer-links">
@@ -1292,51 +1377,97 @@
     </div>
     
     <script>
-        // Countdown Timer
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const eventDate = new Date("2025-08-23T09:00:00").getTime();
-            const distance = eventDate - now;
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            
-            if (document.getElementById('days2')) {
-                document.getElementById('days2').textContent = days.toString().padStart(2, '0');
-                document.getElementById('hours2').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes2').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds2').textContent = seconds.toString().padStart(2, '0');
+        // Form validation helper
+        function validateForm(form) {
+            let valid = true;
+            // Name
+            const nameInput = form.querySelector('input[name="name"]');
+            const nameError = nameInput.nextElementSibling;
+            if (!nameInput.value.trim()) {
+                nameError.textContent = 'Please enter your full name.';
+                nameError.style.display = 'block';
+                nameInput.style.borderColor = '#FF1744';
+                valid = false;
+            } else {
+                nameError.textContent = '';
+                nameError.style.display = 'none';
+                nameInput.style.borderColor = '';
             }
+            // Phone prefix and phone
+            const phonePrefix = form.querySelector('select[name="phone_prefix"]');
+            const phoneInput = form.querySelector('input[name="phone"]');
+            if (!phonePrefix.value) {
+                phonePrefix.style.borderColor = '#FF1744';
+                valid = false;
+            } else {
+                phonePrefix.style.borderColor = '';
+            }
+            if (!phoneInput.value.trim() || !/^[0-9]{7,15}$/.test(phoneInput.value.trim())) {
+                phoneInput.style.borderColor = '#FF1744';
+                valid = false;
+            } else {
+                phoneInput.style.borderColor = '';
+            }
+            // Email
+            const emailInput = form.querySelector('input[name="email"]');
+            const emailError = emailInput.nextElementSibling;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailInput.value.trim()) {
+                emailError.textContent = 'Please enter your email address.';
+                emailError.style.display = 'block';
+                emailInput.style.borderColor = '#FF1744';
+                valid = false;
+            } else if (!emailPattern.test(emailInput.value.trim())) {
+                emailError.textContent = 'Please enter a valid email address.';
+                emailError.style.display = 'block';
+                emailInput.style.borderColor = '#FF1744';
+                valid = false;
+            } else {
+                emailError.textContent = '';
+                emailError.style.display = 'none';
+                emailInput.style.borderColor = '';
+            }
+            // Checkbox
+            const checkbox = form.querySelector('.checkbox');
+            const checkboxError = form.querySelector('.checkbox-error-message');
+            if (checkbox && !checkbox.checked) {
+                checkboxError.textContent = 'You must accept the privacy policy.';
+                checkboxError.style.display = 'block';
+                valid = false;
+            } else if (checkboxError) {
+                checkboxError.textContent = '';
+                checkboxError.style.display = 'none';
+            }
+            return valid;
         }
-        
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-        
         // Form submission handlers with Formspree integration
         async function handleFormSubmit(e) {
             const loadingOverlay = document.getElementById('loading-overlay');
             e.preventDefault();
             const form = e.target;
             const submitButton = form.querySelector('button[type="submit"]');
-            
+            // Validate form
+            if (!validateForm(form)) {
+                // Scroll to first error
+                const firstError = form.querySelector('.error-message[style*="block"], .checkbox-error-message[style*="block"]');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                // Reset button state if needed
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = submitButton.dataset.originalText || 'Submit';
+                }
+                return false;
+            }
             // Disable submit button and show loading state
             if (submitButton) {
                 submitButton.disabled = true;
                 submitButton.innerHTML = 'Submitting <span class="spinner"></span>';
             }
-            
             try {
                 // Show loading overlay
                 loadingOverlay.classList.add('visible');
-                
                 // Submit form data to Formspree
                 const formData = new FormData(form);
                 const response = await fetch(form.action, {
@@ -1346,13 +1477,13 @@
                         'Accept': 'application/json'
                     }
                 });
-                
                 const result = await response.json();
-                
                 if (result.ok) {
-                    // Hide loading overlay and show confirmation
+                    // Hide loading overlay
                     loadingOverlay.classList.remove('visible');
-                    await showConfirmation();
+                    // Redirect immediately to payment page
+                    window.location.href = 'https://pay.gtextglobal.com/business-growth-conference-us/';
+                    return;
                 } else {
                     throw new Error('Form submission failed');
                 }
@@ -1361,7 +1492,6 @@
                 loadingOverlay.classList.remove('visible');
                 console.error('Error:', error);
                 alert('There was a problem submitting your form. Please try again.');
-                
                 // Reset button state
                 if (submitButton) {
                     submitButton.disabled = false;
@@ -1375,8 +1505,6 @@
             button.dataset.originalText = button.innerHTML;
         });
         
-        document.getElementById('registration-form').addEventListener('submit', handleFormSubmit);
-        document.getElementById('urgent-form').addEventListener('submit', handleFormSubmit);
         async function showConfirmation() {
             // Hide the form and show confirmation immediately
             document.getElementById('main-form').style.display = 'none';
@@ -1400,8 +1528,12 @@
             }, 300);
         }
         
+        // scrollToForm function (ensure it scrolls to the form section)
         function scrollToForm() {
-            document.getElementById('main-form').scrollIntoView({ behavior: 'smooth' });
+            const formSection = document.getElementById('main-form');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
         
         // Simulate dynamic seat counter
@@ -1412,6 +1544,332 @@
                 document.querySelector('.seats-left').textContent = `${seatsLeft} VIP Seats left!`;
             }
         }, 30000);
+
+        // Flyer Modal Functions
+        function openFlyerModal() {
+            document.getElementById('flyer-modal').style.display = 'flex';
+        }
+        function closeFlyerModal() {
+            document.getElementById('flyer-modal').style.display = 'none';
+        }
+        function downloadFlyer(e) {
+            e.stopPropagation();
+            const link = document.createElement('a');
+            link.href = 'IMAGES/bus.jpg';
+            link.download = 'Business-Growth-Conference-2025-Flyer.jpg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Hamburger menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('header-nav').classList.toggle('nav-open');
+            this.classList.toggle('open');
+        });
+        // Smooth scroll for nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+                document.getElementById('header-nav').classList.remove('nav-open');
+                document.getElementById('hamburger').classList.remove('open');
+            });
+        });
     </script>
+    <style>
+        /* Responsive Header Styles */
+        .main-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(76,70,229,0.07);
+            z-index: 100;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 24px;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #4F46E5;
+            letter-spacing: 0.5px;
+        }
+        .header-nav {
+            display: flex;
+            gap: 32px;
+        }
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #FF1744;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: #4F46E5;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        /* Hamburger open animation */
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+        /* Mobile nav */
+        @media (max-width: 900px) {
+            .header-nav {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                gap: 0;
+                width: 200px;
+                box-shadow: 0 8px 32px rgba(76,70,229,0.10);
+                border-radius: 0 0 12px 12px;
+                display: none;
+                z-index: 101;
+            }
+            .header-nav.nav-open {
+                display: flex;
+            }
+            .nav-link {
+                padding: 18px 24px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-container {
+                padding: 8px 8px;
+            }
+            .header-title {
+                font-size: 1rem;
+            }
+        }
+        /* Container and Section Responsiveness */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 10px;
+        }
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 98vw;
+            }
+        }
+        @media (max-width: 900px) {
+            .container {
+                max-width: 100vw;
+                padding: 10px 2vw;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 4px;
+            }
+        }
+        /* Section and Card Responsiveness */
+        .card {
+            box-sizing: border-box;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Prevent horizontal scroll */
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Flyer Hero and Modal Styles */
+        .flyer-hero .flyer-img:hover {
+            transform: scale(1.025);
+            box-shadow: 0 16px 48px rgba(76,70,229,0.18);
+        }
+        #flyer-modal {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInFlyer 0.3s;
+        }
+        @keyframes fadeInFlyer {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .register-flyer-btn:hover {
+            background: #D50000;
+        }
+        @media (max-width: 600px) {
+            .flyer-hero .flyer-img { border-radius: 10px 10px 0 0; }
+            .event-info-section { font-size: 0.95rem; }
+        }
+        /* Improved Event Info Card Styles */
+        .improved-event-info {
+            position: relative;
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 8px 32px rgba(76,70,229,0.10), 0 1.5px 8px rgba(34,197,94,0.07);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 36px;
+            border: 1.5px solid rgba(76,70,229,0.13);
+            padding: 0;
+        }
+        .event-info-accent {
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 8px;
+            background: linear-gradient(180deg, #4F46E5 0%, #22C55E 100%);
+            border-radius: 8px 0 0 8px;
+        }
+        .event-info-content {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            padding: 36px 36px 28px 32px;
+            gap: 32px;
+        }
+        .event-info-left {
+            flex: 2 1 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            justify-content: center;
+        }
+        .event-info-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #4F46E5;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .event-info-line {
+            font-size: 1.08rem;
+            color: #222;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+        .event-info-icon {
+            font-size: 1.2em;
+            opacity: 0.85;
+        }
+        .event-info-line a {
+            color: #4F46E5;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        .event-info-line a:hover {
+            color: #FF1744;
+        }
+        .event-info-right {
+            flex: 1 1 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .event-info-datebox {
+            background: linear-gradient(135deg, #4F46E5 0%, #FF1744 100%);
+            color: #fff;
+            border-radius: 18px;
+            padding: 24px 18px 16px 18px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(76,70,229,0.10);
+            min-width: 140px;
+        }
+        .event-info-date-main {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        .event-info-seats {
+            background: #22C55E;
+            color: #fff;
+            border-radius: 8px;
+            padding: 7px 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        @media (max-width: 900px) {
+            .event-info-content {
+                flex-direction: column;
+                gap: 18px;
+                padding: 24px 12px 18px 12px;
+            }
+            .event-info-title {
+                font-size: 1.3rem;
+            }
+            .event-info-datebox {
+                min-width: 100px;
+                padding: 16px 8px 10px 8px;
+            }
+        }
+        @media (max-width: 600px) {
+            .improved-event-info {
+                border-radius: 12px;
+            }
+            .event-info-content {
+                padding: 12px 4px 10px 4px;
+                gap: 10px;
+            }
+            .event-info-title {
+                font-size: 1.1rem;
+            }
+            .event-info-datebox {
+                font-size: 0.95rem;
+                padding: 10px 4px 6px 4px;
+            }
+            .event-info-seats {
+                font-size: 0.9rem;
+                padding: 5px 0;
+            }
+        }
+    </style>
 </body>
 </html>
