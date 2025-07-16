@@ -11,9 +11,10 @@
             box-sizing: border-box;
         }
 
+        /* Update body background to solid purple */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #eff0f6 0%, #764ba2 100%);
+            background: #4F46E5;
             min-height: 100vh;
             color: #333;
         }
@@ -36,8 +37,9 @@
             margin-bottom: 10px;
         }
 
+        /* Card backgrounds remain white, but remove any gradients or non-flyer colors */
         .card {
-            background: white;
+            background: #fff;
             border-radius: 20px;
             padding: 30px 25px;
             margin-bottom: 20px;
@@ -46,9 +48,10 @@
             overflow: hidden;
         }
 
+        /* Remove gradients from hero-section, use solid purple */
         .hero-section {
-            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
-            color: white;
+            background: #4F46E5;
+            color: #fff;
             text-align: center;
             position: relative;
         }
@@ -963,15 +966,15 @@
     </header>
     <div class="container">
         <!-- 50% OFF Coupon Card -->
-        <div class="card" style="background: linear-gradient(135deg, #FFD700 0%, #FF1744 100%); color: #fff; text-align: center; margin-bottom: 28px; box-shadow: 0 8px 32px rgba(255, 23, 68, 0.15); border: 3px solid #FFD700;">
-            <div style="font-size: 2.5rem; font-weight: 900; letter-spacing: 2px; text-shadow: 2px 2px 8px #FF1744; margin-bottom: 10px;">50% OFF</div>
-            <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 8px;">Use Coupon Code:</div>
+        <div class="card" style="background: #fff; color: #4F46E5; text-align: center; margin-bottom: 28px; box-shadow: 0 8px 32px rgba(76,70,229,0.15); border: 3px solid #4F46E5;">
+            <div style="font-size: 2.5rem; font-weight: 900; letter-spacing: 2px; text-shadow: 2px 2px 8px #4F46E5; margin-bottom: 10px; color: #4F46E5;">50% OFF</div>
+            <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 8px; color: #4F46E5;">Use Coupon Code:</div>
             <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-                <span id="coupon-code" style="font-size: 2rem; font-weight: 900; background: #fff; color: #FF1744; display: inline-block; padding: 8px 32px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); letter-spacing: 2px; user-select: all;">BGC50</span>
-                <button id="copy-coupon-btn" onclick="copyCouponCode()" style="background: #fff; color: #FF1744; border: none; border-radius: 8px; padding: 8px 14px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">Copy</button>
-                <span id="copy-confirm" style="display:none; color:#fff; font-weight:bold; margin-left:8px; font-size:1rem;">Copied!</span>
+                <span id="coupon-code" style="font-size: 2rem; font-weight: 900; background: #FFD700; color: #4F46E5; display: inline-block; padding: 8px 32px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); letter-spacing: 2px; user-select: all;">BGC50</span>
+                <button id="copy-coupon-btn" onclick="copyCouponCode()" style="background: #FF1744; color: #fff; border: none; border-radius: 8px; padding: 8px 14px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">Copy</button>
+                <span id="copy-confirm" style="display:none; color:#4F46E5; font-weight:bold; margin-left:8px; font-size:1rem;">Copied!</span>
             </div>
-            <div style="margin-top: 12px; font-size: 1rem; color: #fff; opacity: 0.95;">Apply this code at checkout to claim your discount!</div>
+            <div style="margin-top: 12px; font-size: 1rem; color: #4F46E5; opacity: 0.95;">Apply this code at checkout to claim your discount!</div>
         </div>
         <!-- Flyer Hero Banner -->
         <div class="card flyer-hero" id="about" style="padding: 0; margin-bottom: 30px; position: relative; overflow: visible;">
@@ -1314,14 +1317,14 @@
         </div>
 
         <!-- Payment Section (hidden by default, shown after form submission) -->
-        <div id="payment-section" class="card" style="display:none; text-align:center; background: linear-gradient(135deg, #4F46E5 0%, #FFD700 100%); color: #fff; box-shadow: 0 8px 32px rgba(76,70,229,0.15);">
-            <div style="font-size:2rem; font-weight:900; margin-bottom:12px;">Proceed to Payment</div>
-            <div style="font-size:1.2rem; margin-bottom:10px;">Thank you for registering! To complete your registration, please proceed to payment.</div>
+        <div id="payment-section" class="card" style="display:none; text-align:center; background: #fff; color: #4F46E5; box-shadow: 0 8px 32px rgba(76,70,229,0.15); border: 3px solid #4F46E5;">
+            <div style="font-size:2rem; font-weight:900; margin-bottom:12px; color: #4F46E5;">Proceed to Payment</div>
+            <div style="font-size:1.2rem; margin-bottom:10px; color: #4F46E5;">Thank you for registering! To complete your registration, please proceed to payment.</div>
             <div style="margin-bottom:18px;">
-                <span style="font-size:1.1rem; font-weight:bold; color:#FFD700; background:#fff; color:#FF1744; padding:6px 18px; border-radius:8px; display:inline-block; margin-bottom:6px;">Coupon Code: BGC50</span>
-                <div style="font-size:1rem; color:#fff;">Use this code at checkout for 50% OFF!</div>
+                <span style="font-size:1.1rem; font-weight:bold; background:#FFD700; color:#4F46E5; padding:6px 18px; border-radius:8px; display:inline-block; margin-bottom:6px;">Coupon Code: BGC50</span>
+                <div style="font-size:1rem; color:#4F46E5;">Use this code at checkout for 50% OFF!</div>
             </div>
-            <a href="https://pay.gtextglobal.com/business-growth-conference-us/" target="_blank" style="display:inline-block; background:#FFD700; color:#4F46E5; font-weight:bold; font-size:1.2rem; padding:14px 36px; border-radius:10px; text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.10); margin-top:10px;">Go to Payment</a>
+            <a href="https://pay.gtextglobal.com/business-growth-conference-us/" target="_blank" style="display:inline-block; background:#FF1744; color:#fff; font-weight:bold; font-size:1.2rem; padding:14px 36px; border-radius:10px; text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.10); margin-top:10px;">Go to Payment</a>
         </div>
     </div>
 
