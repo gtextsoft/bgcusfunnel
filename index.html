@@ -945,6 +945,94 @@
             }
         }
     </style>
+    <style>
+        /* Modern Trust Section Styles */
+        .trust-section {
+            background: #fff;
+            color: #222;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 32px 18px;
+            margin-top: 20px;
+            margin-bottom: 24px;
+            display: block;
+            text-align: center;
+        }
+        .trust-avatars {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 12px;
+        }
+        .trust-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            object-fit: cover;
+            margin-left: -12px;
+            box-shadow: 0 2px 8px rgba(76,70,229,0.10);
+        }
+        .trust-avatar:first-child {
+            margin-left: 0;
+        }
+        .trust-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 6px;
+            letter-spacing: 0.2px;
+        }
+        .stars {
+            color: #FFD700;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+        .whats-in-title {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #4F46E5;
+            margin-bottom: 10px;
+            margin-top: 18px;
+        }
+        .features-list {
+            text-align: center;
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        @media (min-width: 900px) {
+            .trust-section {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                text-align: left;
+                padding: 48px 48px 40px 48px;
+            }
+            .trust-avatars {
+                justify-content: flex-start;
+                margin-bottom: 0;
+            }
+            .trust-section .trust-info {
+                min-width: 260px;
+                max-width: 340px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            .trust-section .trust-content {
+                flex: 1;
+                padding-left: 48px;
+            }
+            .whats-in-title, .features-list {
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Responsive Header -->
@@ -1089,52 +1177,21 @@
 
         <!-- Trust Section -->
         <div class="card trust-section">
-            <div class="trust-avatars">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face" alt="User 1" class="trust-avatar">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&crop=face" alt="User 2" class="trust-avatar">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=80&h=80&fit=crop&crop=face" alt="User 3" class="trust-avatar">
-                <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=80&h=80&fit=crop&crop=face" alt="User 4" class="trust-avatar">
+            <div class="trust-info">
+                <div class="trust-avatars">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face" alt="User 1" class="trust-avatar">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&crop=face" alt="User 2" class="trust-avatar">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=80&h=80&fit=crop&crop=face" alt="User 3" class="trust-avatar">
+                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=80&h=80&fit=crop&crop=face" alt="User 4" class="trust-avatar">
+                </div>
+                <div class="trust-text">Trusted by over 6,000+ Entrepreneurs</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
             </div>
-            
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <div class="trust-text">Trusted by over 6,000+ Entrepreneurs</div>
-            
-            <h2 class="whats-in-title">What's in for me?</h2>
-            
-            <div class="features-list">
-                Addressing business foundations, sales mastery, brand building, AI automation, digital leverage, scaling, funding, and investor networking
-            </div>
-            
-            <div class="feature-section">
-                <div class="feature-icon">📊</div>
-                <h3 class="feature-title">Business Growth</h3>
-                <p class="feature-description">
-                    Learn Proven Scaling Strategies, Smart Financial Management, and Funding Acquisition methods to grow without debt traps—no fluff, just actionable growth systems.
-                </p>
-            </div>
-            
-            <div class="feature-section">
-                <div class="feature-icon">🎥</div>
-                <h3 class="feature-title">Automate and Optimize for Growth</h3>
-                <p class="feature-description">
-                    Leverage Business Automation and Cost Management strategies to streamline operations, scale without burnout, and boost profitability with lean systems.
-                </p>
-            </div>
-            
-            <div class="feature-section">
-                <div class="feature-icon">💬</div>
-                <h3 class="feature-title">Get Real-Time, Live Feedback from Experts & Peers</h3>
-                <p class="feature-description">
-                    Present your ideas, pitches, or growth strategies live and get instant expert feedback, peer reviews, and guidance.
-                </p>
-            </div>
-            
-            <div class="feature-section">
-                <div class="feature-icon">🤝</div>
-                <h3 class="feature-title">Networking</h3>
-                <p class="feature-description">
-                    Connect with like-minded entrepreneurs and investors
-                </p>
+            <div class="trust-content">
+                <h2 class="whats-in-title">What's in for me?</h2>
+                <div class="features-list">
+                    Addressing business foundations, sales mastery, brand building, AI automation, digital leverage, scaling, funding, and investor networking
+                </div>
             </div>
         </div>
 
@@ -1226,7 +1283,7 @@
                     <li>Lunch</li>
                     <li>A Post-Conference Growth Plan</li>
                 </ul>
-                <button class="pricing-button" onclick="scrollToForm()">Regular Tickets - $199 <span style="color:#FFD700; font-weight:bold; font-size:22px; text-shadow: 1px 1px 4px #FF1744; letter-spacing: 1px;">50% OFF</span></button>
+                <button class="pricing-button" onclick="scrollToForm()">Regular Tickets - $398 <span style="color:#FFD700; font-weight:bold; font-size:22px; text-shadow: 1px 1px 4px #FF1744; letter-spacing: 1px;">50% OFF</span></button>
             </div>
             
             <div class="pricing-card">
@@ -1246,7 +1303,7 @@
                     <li>Live Q&amp;A with Select Speakers</li>
                     <li>A Post-Conference Growth Plan</li>
                 </ul>
-                <button class="pricing-button" onclick="scrollToForm()">VIP Tickets - $999 <span style="color:#FFD700; font-weight:bold; font-size:22px; text-shadow: 1px 1px 4px #FF1744; letter-spacing: 1px;">50% OFF</span></button>
+                <button class="pricing-button" onclick="scrollToForm()">VIP Tickets - $1998 <span style="color:#FFD700; font-weight:bold; font-size:22px; text-shadow: 1px 1px 4px #FF1744; letter-spacing: 1px;">50% OFF</span></button>
             </div>
         </div>
 
