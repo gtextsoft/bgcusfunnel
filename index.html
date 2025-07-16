@@ -962,10 +962,21 @@
         </div>
     </header>
     <div class="container">
+        <!-- 50% OFF Coupon Card -->
+        <div class="card" style="background: linear-gradient(135deg, #FFD700 0%, #FF1744 100%); color: #fff; text-align: center; margin-bottom: 28px; box-shadow: 0 8px 32px rgba(255, 23, 68, 0.15); border: 3px solid #FFD700;">
+            <div style="font-size: 2.5rem; font-weight: 900; letter-spacing: 2px; text-shadow: 2px 2px 8px #FF1744; margin-bottom: 10px;">50% OFF</div>
+            <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 8px;">Use Coupon Code:</div>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                <span id="coupon-code" style="font-size: 2rem; font-weight: 900; background: #fff; color: #FF1744; display: inline-block; padding: 8px 32px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); letter-spacing: 2px; user-select: all;">BGC50</span>
+                <button id="copy-coupon-btn" onclick="copyCouponCode()" style="background: #fff; color: #FF1744; border: none; border-radius: 8px; padding: 8px 14px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">Copy</button>
+                <span id="copy-confirm" style="display:none; color:#fff; font-weight:bold; margin-left:8px; font-size:1rem;">Copied!</span>
+            </div>
+            <div style="margin-top: 12px; font-size: 1rem; color: #fff; opacity: 0.95;">Apply this code at checkout to claim your discount!</div>
+        </div>
         <!-- Flyer Hero Banner -->
         <div class="card flyer-hero" id="about" style="padding: 0; margin-bottom: 30px; position: relative; overflow: visible;">
             <img src="IMAGES/bus.jpg" alt="Business Growth Conference Flyer" class="flyer-img" style="width: 100%; border-radius: 20px 20px 0 0; cursor: pointer; box-shadow: 0 8px 32px rgba(76,70,229,0.15); transition: transform 0.3s;" onclick="openFlyerModal()">
-            <button class="register-flyer-btn" onclick="scrollToForm()" style="position: absolute; top: 18px; right: 18px; background: #FF1744; color: #fff; border: none; border-radius: 8px; padding: 10px 18px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.08); z-index: 2; transition: background 0.2s;">Register</button>
+            <button class="register-flyer-btn" onclick="scrollToForm()" style="position: absolute; top: 18px; right: 18px; background: #FF1744; color: #fff; border: none; border-radius: 8px; padding: 10px 18px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.08); z-index: 2; transition: background 0.2s;">Register - 50% OFF</button>
         </div>
         <!-- Flyer Modal -->
         <div id="flyer-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center;">
@@ -973,18 +984,9 @@
             <img src="IMAGES/bus.jpg" alt="Flyer Large" style="max-width:90vw; max-height:90vh; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.25);">
         </div>
         <!-- Event Info Section (from flyer) -->
-        <div class="card event-info-section improved-event-info">
+        <!-- <div class="card event-info-section improved-event-info">
             <div class="event-info-accent"></div>
             <div class="event-info-content">
-                <div class="event-info-left">
-                    <h2 class="event-info-title">Business Growth Conference 2025</h2>
-                    <div class="event-info-line"><span class="event-info-icon">📅</span> <span>23rd & 24th August 2025</span></div>
-                    <div class="event-info-line"><span class="event-info-icon">👤</span> <span>Convener: <b>Dr. Stephen Akintayo</b></span></div>
-                    <div class="event-info-line"><span class="event-info-icon">🎤</span> <span>Speaker: <b>Dr. Cosmas Maduka</b></span></div>
-                    <div class="event-info-line"><span class="event-info-icon">🌐</span> <span>Reservations: <a href="https://www.stephenakintayo.com/salesconference" target="_blank">stephenakintayo.com/salesconference</a></span></div>
-                    <div class="event-info-line"><span class="event-info-icon">✉️</span> <span>Email: <a href="mailto:products@stephenakintayo.com">products@stephenakintayo.com</a></span></div>
-                    <div class="event-info-line"><span class="event-info-icon">📞</span> <span>Inquiries: <a href="tel:+14793519012">+1 479 351 9012</a>, <a href="tel:+13468205857">+1 346 820 5857</a></span></div>
-                </div>
                 <div class="event-info-right">
                     <div class="event-info-datebox">
                         <div class="event-info-date-main">23rd & 24th<br>Aug 2025</div>
@@ -992,7 +994,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Hero Section
         <div class="card hero-section">
@@ -1028,7 +1030,7 @@
                 <div class="form-group" style="display: flex; gap: 8px;">
                     <select name="phone_prefix" class="form-input" style="max-width: 110px; flex: 0 0 110px;" required>
                         <option value="+1">🇺🇸 +1 (USA)</option>
-                        <option value="+234">🇳🇬 +234 (Nigeria)</option>
+                        <!-- <option value="+234">🇳🇬 +234 (Nigeria)</option>
                         <option value="+44">🇬🇧 +44 (UK)</option>
                         <option value="+55">🇧🇷 +55 (Brazil)</option>
                         <option value="+91">🇮🇳 +91 (India)</option>
@@ -1038,7 +1040,7 @@
                         <option value="+61">🇦🇺 +61 (Australia)</option>
                         <option value="+49">🇩🇪 +49 (Germany)</option>
                         <option value="+33">🇫🇷 +33 (France)</option>
-                        <option value="+234">🇳🇬 +234 (Nigeria)</option>
+                        <option value="+234">🇳🇬 +234 (Nigeria)</option> -->
                         <!-- Add more as needed -->
                     </select>
                     <input type="tel" class="form-input" name="phone" placeholder="📞 Phone number">
@@ -1055,8 +1057,8 @@
                 </div>
                 <div class="checkbox-error-message" style="color:#FF1744; font-size:13px; display:none; margin-bottom:10px;"></div>
                 <button type="submit" class="cta-button">
+                    <span style="display:block; font-weight:bold; color:#FFD700; font-size:22px; text-shadow: 1px 1px 4px #FF1744; letter-spacing: 1px;">50% OFF</span>
                     Secure Your Seat
-                    <div class="seats-left">20 VIP Seats left!</div>
                 </button>
             </form>
             
@@ -1078,7 +1080,9 @@
                     <div class="countdown-label">Seconds</div>
                 </div>
             </div>
+            <!-- <div class="event-info-line"><span class="event-info-icon" style="color: #FF1744;">📅</span> <span>23rd & 24th August 2025</span></div> -->
         </div>
+        
 
         <!-- Trust Section -->
         <div class="card trust-section">
@@ -1183,7 +1187,7 @@
                 </p>
             </div>
             
-            <div class="countdown">
+            <!-- <div class="countdown">
                 <div class="countdown-item">
                     <span class="countdown-number" id="days2">00</span>
                     <div class="countdown-label">Days</div>
@@ -1200,9 +1204,9 @@
                     <span class="countdown-number" id="seconds2">56</span>
                     <div class="countdown-label">Seconds</div>
                 </div>
-            </div>
+            </div> -->
             
-            <button class="cta-button" onclick="scrollToForm()">See Ticket Options!</button>
+            <button class="cta-button" onclick="scrollToForm()"><span style="font-weight:bold; color:#FFD700; font-size:22px; text-shadow: 1px 1px 4px #FF1744; letter-spacing: 1px;">50% OFF</span> See Ticket Options!</button>
         </div>
 
         <!-- Pricing Section -->
@@ -1219,7 +1223,7 @@
                     <li>Live Q&A with Select Speakers</li>
                     <li>A post-conference growth plan to keep your fire burning.</li>
                 </ul>
-                <button class="pricing-button" onclick="scrollToForm()">Regular Tickets - $199</button>
+                <button class="pricing-button" onclick="scrollToForm()">Regular Tickets - $199 <span style="color:#FFD700; font-weight:bold; font-size:22px; text-shadow: 1px 1px 4px #FF1744; letter-spacing: 1px;">50% OFF</span></button>
             </div>
             
             <div class="pricing-card">
@@ -1234,52 +1238,7 @@
                     <li>Live Q&A with Select Speakers</li>
                     <li>A post-conference growth plan to keep your fire burning.</li>
                 </ul>
-                <button class="pricing-button" onclick="scrollToForm()">VIP Tickets - $999</button>
-            </div>
-        </div>
-
-        <!-- Urgent Section -->
-        <div class="card urgent-section" id="contact">
-            <h2 class="urgent-title">Secure Your Spot Now!</h2>
-            <p class="urgent-subtitle">Get expert insights and premium content - secure your spot now!</p>
-            
-            <form id="urgent-form" class="registration-form" action="https://app.mailingboss.com/lists/687678b97dfbd/subscribe" method="POST">
-                <div class="form-group" style="display: flex; gap: 8px;">
-                    <select name="phone_prefix" class="form-input" style="max-width: 110px; flex: 0 0 110px;" required>
-                        <option value="+1">🇺🇸 +1 (USA)</option>
-                        <option value="+234">🇳🇬 +234 (Nigeria)</option>
-                        <option value="+44">🇬🇧 +44 (UK)</option>
-                        <option value="+55">🇧🇷 +55 (Brazil)</option>
-                        <option value="+91">🇮🇳 +91 (India)</option>
-                        <option value="+27">🇿🇦 +27 (South Africa)</option>
-                        <option value="+233">🇬🇭 +233 (Ghana)</option>
-                        <option value="+971">🇦🇪 +971 (UAE)</option>
-                        <option value="+61">🇦🇺 +61 (Australia)</option>
-                        <option value="+49">🇩🇪 +49 (Germany)</option>
-                        <option value="+33">🇫🇷 +33 (France)</option>
-                        <option value="+234">🇳🇬 +234 (Nigeria)</option>
-                        <!-- Add more as needed -->
-                    </select>
-                    <input type="tel" class="form-input" name="phone" placeholder="📞 Phone number" required pattern="[0-9]{7,15}">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-input" name="email" placeholder="📧 Email address" required>
-                    <div class="error-message" style="color:#FF1744; font-size:13px; display:none;"></div>
-                </div>
-                <div class="checkbox-group">
-                    <input type="checkbox" class="checkbox" required id="privacy-checkbox-urgent">
-                    <label class="checkbox-label" for="privacy-checkbox-urgent">
-                        I have read and accept the <a href="#" class="privacy-link">privacy policy</a>.
-                    </label>
-                </div>
-                <div class="checkbox-error-message" style="color:#FF1744; font-size:13px; display:none; margin-bottom:10px;"></div>
-                <button type="submit" class="cta-button">Pay now</button>
-            </form>
-            
-            <div class="footer-links">
-                <a href="#">Terms of Use</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Manage Cookies</a>
+                <button class="pricing-button" onclick="scrollToForm()">VIP Tickets - $999 <span style="color:#FFD700; font-weight:bold; font-size:22px; text-shadow: 1px 1px 4px #FF1744; letter-spacing: 1px;">50% OFF</span></button>
             </div>
         </div>
 
@@ -1337,7 +1296,7 @@
                 </div>
             </div>
             
-            <button class="community-button">Join Private Community now</button>
+            <button class="community-button">Join Private Community now <span style="color:#FFD700; font-weight:bold; font-size:22px; text-shadow: 1px 1px 4px #FF1744; letter-spacing: 1px;">50% OFF</span></button>
             
             <div class="speakers" style="margin-bottom: 20px;">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLcwh0tJDo7iJy0BEbAzn07BfUXEDZ6J1aQA&s" alt="Speaker 1" class="speaker-img">
@@ -1352,6 +1311,17 @@
             <div class="closing-message">
                 I can't wait to see you there!
             </div>
+        </div>
+
+        <!-- Payment Section (hidden by default, shown after form submission) -->
+        <div id="payment-section" class="card" style="display:none; text-align:center; background: linear-gradient(135deg, #4F46E5 0%, #FFD700 100%); color: #fff; box-shadow: 0 8px 32px rgba(76,70,229,0.15);">
+            <div style="font-size:2rem; font-weight:900; margin-bottom:12px;">Proceed to Payment</div>
+            <div style="font-size:1.2rem; margin-bottom:10px;">Thank you for registering! To complete your registration, please proceed to payment.</div>
+            <div style="margin-bottom:18px;">
+                <span style="font-size:1.1rem; font-weight:bold; color:#FFD700; background:#fff; color:#FF1744; padding:6px 18px; border-radius:8px; display:inline-block; margin-bottom:6px;">Coupon Code: BGC50</span>
+                <div style="font-size:1rem; color:#fff;">Use this code at checkout for 50% OFF!</div>
+            </div>
+            <a href="https://pay.gtextglobal.com/business-growth-conference-us/" target="_blank" style="display:inline-block; background:#FFD700; color:#4F46E5; font-weight:bold; font-size:1.2rem; padding:14px 36px; border-radius:10px; text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.10); margin-top:10px;">Go to Payment</a>
         </div>
     </div>
 
@@ -1481,8 +1451,10 @@
                 if (result.ok) {
                     // Hide loading overlay
                     loadingOverlay.classList.remove('visible');
-                    // Redirect immediately to payment page
-                    window.location.href = 'https://pay.gtextglobal.com/business-growth-conference-us/';
+                    // Hide the form and show the payment section
+                    document.getElementById('main-form').style.display = 'none';
+                    document.getElementById('payment-section').style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                     return;
                 } else {
                     throw new Error('Form submission failed');
@@ -1536,15 +1508,6 @@
             }
         }
         
-        // Simulate dynamic seat counter
-        let seatsLeft = 20;
-        setInterval(() => {
-            if (seatsLeft > 5 && Math.random() < 0.1) {
-                seatsLeft--;
-                document.querySelector('.seats-left').textContent = `${seatsLeft} VIP Seats left!`;
-            }
-        }, 30000);
-
         // Flyer Modal Functions
         function openFlyerModal() {
             document.getElementById('flyer-modal').style.display = 'flex';
@@ -1582,6 +1545,16 @@
                 document.getElementById('hamburger').classList.remove('open');
             });
         });
+
+        function copyCouponCode() {
+            const code = document.getElementById('coupon-code').textContent;
+            navigator.clipboard.writeText(code).then(function() {
+                document.getElementById('copy-confirm').style.display = 'inline';
+                setTimeout(function() {
+                    document.getElementById('copy-confirm').style.display = 'none';
+                }, 1500);
+            });
+        }
     </script>
     <style>
         /* Responsive Header Styles */
